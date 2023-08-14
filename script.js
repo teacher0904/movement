@@ -3,7 +3,7 @@ google.charts.setOnLoadCallback(run);
 
 const sheetId = "18TIqNuXrJYzDRKfBXrnYuc4xvLo2K_v6dqYLkZZCJqI"; // 구글 시트 ID
 const apiKey = "AIzaSyBGVBkEXJc3KkCsBDCmusiAhY8PEUbpNhI"; // 구글 API 키
-const sheetDataRange = "Sheet3!A1:B11";
+const sheetDataRange = "Sheet3!A1:B99";
 
 const sheetInfo = [
   {
