@@ -117,7 +117,7 @@ async function showDataList() {
   
     data.forEach((row) => {
       const listItem = document.createElement("li");
-      listItem.textContent = row.join("");
+      listItem.textContent = row.join("\u00a0\u00a0");
       listContainer.appendChild(listItem);
     });
   }
