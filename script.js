@@ -5,7 +5,7 @@ const sheetId = "18TIqNuXrJYzDRKfBXrnYuc4xvLo2K_v6dqYLkZZCJqI"; // 구글 시트
 const apiKey = "AIzaSyBGVBkEXJc3KkCsBDCmusiAhY8PEUbpNhI"; // 구글 API 키
 const sheetDataRange = "Sheet3!A1:B99";
 
-const sheetInfo = [
+const sheetInfo = [ 
   {
     chartElementId: "chartContainer1",
     dataRange: "Sheet1!A1:B14", // 시트1의 데이터 범위
