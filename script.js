@@ -3,48 +3,10 @@ google.charts.setOnLoadCallback(run);
 
 const sheetId = "1xS4f9iGMz6LK_-LKQ9MzvWwySL1595_BpEXTMTvCIp8"; // 구글 시트 ID
 const apiKey = "AIzaSyDbPZ-tyZLPpMpMYgrkwcv8Sm8cHozdD7s"; // 구글 API 키
-const sheetDataRange = "Sheet3!A1:B99";
+const sheetDataRanges = ["Sheet3!A2:B", "Sheet3!C2:D","Sheet3!E2:F", "Sheet3!G2:H","Sheet3!I2:J", "Sheet3!K2:L",
+"Sheet3!M2:N", "Sheet3!O2:P","Sheet3!Q2:R", "Sheet3!S2:T","Sheet3!U2:V", "Sheet3!W2:X",
+ "Sheet3!Y2:Z","Sheet3!AA2:AB", "Sheet3!AC2:AD","Sheet3!AE2:AF", "Sheet3!AG2:AH"];
 
-const sheetInfo = [ 
-  {
-    chartElementId: "chartContainer1",
-    dataRange: "Sheet1!A1:B14", // 시트1의 데이터 범위
-    chartType: "bar",
-    options: {
-      width: 800,
-      height: 600,
-      legend: { position: "bottom" },
-      hAxis: { title: "지역" },
-    },
-  },
-  {
-    chartElementId: "chartContainer2",
-    dataRange: "Sheet2!A1:B5", // 시트2의 데이터 범위
-    chartType: "pie",
-    options: {
-      width: 800,
-      height: 600,
-      legend: { position: "bottom" },
-      hAxis: { title: "항목" },
-    },
-  },
-  {
-    chartElementId: "chartContainer3",
-    dataRange: "Sheet3!A1:B999",
-    chartType: "bar", // 원하는 차트 유형: line, bar 등
-    options: {
-      title: "시트3 차트 제목",
-      width: 800,
-      height: 600,
-      legend: { position: "bottom" },
-      hAxis: { title: "항목" },
-      vAxis: { title: "값" },
-    },
-    sortOrder: "desc", // 추가한 'sortOrder' 속성
-  },
-
-  // 이하, 시트 별로 차트에 대한 설정 정보 위의 형식으로 추가
-];
 
 async function fetchData(sheetId, dataRange, apiKey) {
   const response = await fetch(
@@ -55,110 +17,122 @@ async function fetchData(sheetId, dataRange, apiKey) {
     console.error("서버로부터 에러 메시지를 받았습니다:", response.status);
     return null;
   }
-  
+
   const responseData = await response.json();
   return responseData.values;
 }
 
-async function drawChart(sheetInfo) {
-  const data = await fetchData(sheetId, sheetInfo.dataRange, apiKey);
-  if (!data) {
-    console.error("데이터가 로드되지 않았습니다.");
+async function showDataToggle(dataRange, parentId, loadingMsgId) {
+  
+  const loadingMsg = document.getElementById(loadingMsgId);
+  if (!loadingMsg) {
+    console.error(`로딩 메시지 요소를 찾지 못했습니다. ID: ${loadingMsgId}`);
     return;
   }
-  
-  const headers = data.shift();
-  
-  const processedData = data.map(row =>
-    row.map(val => {
-      const numberValue = parseFloat(val);
-      return isNaN(numberValue) ? val : numberValue;
-    })
-  );
+  loadingMsg.style.display = 'block';
 
-  const dataTable = new google.visualization.DataTable();
-  dataTable.addColumn("string", headers[0]);
-
-  for (let i = 1; i < headers.length; i++) {
-    dataTable.addColumn("number", headers[i]);
+  const data = await fetchData(sheetId, dataRange, apiKey);
+  loadingMsg.style.display = 'none';
+  
+  if (!data) {
+    return;
   }
 
-  dataTable.addRows(processedData);
+  const parentElement = document.getElementById(parentId);
+  const listContainer = document.createElement("div");
+  const toggleButton = document.createElement("div");
+  const dataList = document.createElement("ul");
+  parentElement.appendChild(listContainer);
+  listContainer.appendChild(toggleButton);
+  listContainer.appendChild(dataList);
 
-  let chart;
-  switch (sheetInfo.chartType) {
-    case "line":
-      chart = new google.visualization.LineChart(document.getElementById(sheetInfo.chartElementId));
-      break;
-    case "bar":
-      chart = new google.visualization.BarChart(document.getElementById(sheetInfo.chartElementId));
-      break;
-    case "pie":
-      chart = new google.visualization.PieChart(document.getElementById(sheetInfo.chartElementId));
-      break;
-    default:
-      console.error("지원되지 않는 차트 타입입니다.");
-      return;
+  toggleButton.innerHTML = `<span>▶</span> ${data[0].join('       ')+"명"}`;
+  dataList.style.display = "none";
+
+  for (let i = 1; i < data.length; i++) {
+    if (i !== 1) {
+      const rowData = data[i];
+      const listItem = document.createElement("li");
+      listItem.textContent = rowData.join("  ")+"명";
+      dataList.appendChild(listItem);
+    }
   }
 
-  chart.draw(dataTable, sheetInfo.options);
+  const arrow = toggleButton.querySelector("span");
+
+  toggleButton.addEventListener("click", function () {
+    if (dataList.style.display === "none") {
+      dataList.style.display = "block";
+      arrow.textContent = "▼";
+    } else {
+      dataList.style.display = "none";
+      arrow.textContent = "▶";
+    }
+  });
 }
 
 async function run() {
-  for (const info of sheetInfo) {
-    drawChart(info);
+  await showDataToggle(sheetDataRanges[0], "list-parent-1", "loading1");
+  await showDataToggle(sheetDataRanges[1], "list-parent-2", "loading2");
+  await showDataToggle(sheetDataRanges[2], "list-parent-3", "loading3");
+  await showDataToggle(sheetDataRanges[3], "list-parent-4", "loading4");
+  await showDataToggle(sheetDataRanges[4], "list-parent-5", "loading5");
+  await showDataToggle(sheetDataRanges[5], "list-parent-6", "loading6");
+  await showDataToggle(sheetDataRanges[6], "list-parent-7", "loading7");
+  await showDataToggle(sheetDataRanges[7], "list-parent-8", "loading8");
+  await showDataToggle(sheetDataRanges[8], "list-parent-9", "loading9");
+  await showDataToggle(sheetDataRanges[9], "list-parent-10", "loading10");
+  await showDataToggle(sheetDataRanges[10], "list-parent-11", "loading11");
+  await showDataToggle(sheetDataRanges[11], "list-parent-12", "loading12");
+  await showDataToggle(sheetDataRanges[12], "list-parent-13", "loading13");
+  await showDataToggle(sheetDataRanges[13], "list-parent-14", "loading14");
+  await showDataToggle(sheetDataRanges[14], "list-parent-15", "loading15");
+  await showDataToggle(sheetDataRanges[15], "list-parent-16", "loading16");
+  await showDataToggle(sheetDataRanges[16], "list-parent-17", "loading17");
+}
+
+
+
+async function getCellData(dataRange, elementId) {
+  // API를 사용하여 특정 범위의 데이터를 가져옵니다.
+  const response = await fetch(
+    `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${dataRange}?key=${apiKey}`);
+  const data = await response.json();
+  
+  // 불러온 데이터에서 첫 번째 셀의 값을 가져옵니다.
+  const cellData = data.values[0][0];
+
+  // HTML 요소를 찾아 데이터를 업데이트합니다.
+  const element = document.getElementById(elementId);
+  element.textContent = cellData;
+}
+
+async function run2() {
+  // Sheet1의 A1 셀 데이터를 가져와 id가 "cell-data"인 요소에 표시합니다.
+  await getCellData("Sheet3!B1:B1", "cell-data");
+}
+
+run2();
+
+async function displayCellDataAsList(dataRange, elementId) {
+  // API를 사용하여 특정 범위의 데이터를 가져옵니다.
+  const response = await fetch(
+    `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${dataRange}?key=${apiKey}`);
+  const data = await response.json();
+  
+  // HTML 요소를 찾아 데이터를 업데이트합니다.
+  const listElement = document.getElementById(elementId);
+  listElement.innerHTML = ""; // 기존 리스트를 비웁니다.
+  for (const rowData of data.values) {
+    const listItem = document.createElement("li");
+    listItem.textContent = rowData.join(" ")+"명";
+    listElement.appendChild(listItem);
   }
 }
 
-// 데이터를 출력하는 함수 정의
-async function showDataList() {
-    const data = await fetchData(sheetId, sheetDataRange, apiKey);
-    const listContainer = document.getElementById("sheetDataList");
-  
-    data.forEach((row) => {
-      const listItem = document.createElement("li");
-      listItem.textContent = row.join("\u00a0\u00a0");
-      listContainer.appendChild(listItem);
-    });
-  }
-  
-  // 코드 실행
-  showDataList();
-  
+async function run3() {
+  // Sheet1의 A1부터 B3까지의 셀 데이터를 가져와 id가 "data-list"인 요소에 리스트로 표시합니다.
+  await displayCellDataAsList("Sheet3!AI2:AJ4", "data-list");
+}
 
-      // 데이터를 출력하는 함수 정의
-      async function showDataToggle() {
-        const data = await fetchData(sheetId, sheetDataRange, apiKey);
-        const listContainer = document.getElementById("list");
-        const toggleButton = document.getElementById("toggle-button");
-  
-        // 첫 번째 행을 토글 버튼 제목으로 설정
-        toggleButton.innerHTML = `<span>▶</span> ${data[0].join(' / ')}`;
-  
-        // 두 번째 행부터 리스트 항목으로 추가
-        for (let i = 1; i < data.length; i++) {
-          const rowData = data[i];
-          const listItem = document.createElement("li");
-          listItem.textContent = rowData.join("  ");
-          listContainer.appendChild(listItem);
-        }
-      // 화살표 요소를 선택
-      const arrow = toggleButton.querySelector("span")
-
-      // 토글 버튼 이벤트 리스너를 추가
-      toggleButton.addEventListener('click', function() {
-        const listContainer = document.getElementById('list-container');
-        if (listContainer.style.display === 'none') {
-          listContainer.style.display = 'block';
-          arrow.textContent = '▼'; // 아래 방향 세모로 변경
-        } else {
-          listContainer.style.display = 'none';
-          arrow.textContent = '▶'; // 오른쪽 방향 세모로 변경
-        }
-      });        
-      }
-
-      // 코드 실행
-      showDataToggle();
-  
-
+run3();

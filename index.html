@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
     <link rel="stylesheet" href="./main.css">
-  </head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">  </head>
   <body>
-    <h2>토글테스트</h2>
-    <div id="toggle-button">로딩 중...</div>
-    <div id="list-container">
-      <ul id="list"></ul>
+    <div class="container">
+      <div class="col-1">
+        <h1>9.4 공교육 멈춤의 날</h1>
+        <h2>실시간 동참 서명인원 집계<br>
+        <p id="cell-data">...</p>명</h2>
+      </div>
+      <div class="col-2">
+        <div class="col-2-1"><h3>좌측배너</h3></div>
+        <div onclick="window.open('https://forms.gle/c9sqngzX3qxUeUde7');" class="col-2-2"><h3>설문 참여하기</h3></div>
+      </div>
+      <div class="col-3">
+        <div class="col-3-1">
+          <h4>지역별 통계</h4>
+            <div class="list-parent" id="list-parent-1"></div>
+            <p id="loading1">로딩 중...</p>
+            <div class="list-parent" div id="list-parent-2"></div>
+            <p id="loading2">로딩 중...</p>
+            <div class="list-parent" div id="list-parent-3"></div>
+            <p id="loading3">로딩 중...</p>
+            <div class="list-parent" div id="list-parent-4"></div>
+            <p id="loading4">로딩 중...</p>
+            <div class="list-parent" div id="list-parent-5"></div>
+            <p id="loading5">로딩 중...</p>
+            <div class="list-parent" div id="list-parent-6"></div>
+            <p id="loading6">로딩 중...</p>
+            <div   class="list-parent" id="list-parent-7"></div>
+            <p id="loading7">로딩 중...</p>
+            <div class="list-parent" id="list-parent-8"></div>
+            <p id="loading8">로딩 중...</p>
+            <div class="list-parent" id="list-parent-9"></div>
+            <p id="loading9">로딩 중...</p>
+            <div class="list-parent" id="list-parent-10"></div>
+            <p id="loading10">로딩 중...</p>
+            <div class="list-parent" id="list-parent-11"></div>
+            <p id="loading11">로딩 중...</p>
+            <div class="list-parent" id="list-parent-12"></div>
+            <p id="loading12">로딩 중...</p>
+            <div class="list-parent"  id="list-parent-13"></div>
+            <p id="loading13">로딩 중...</p>
+            <div class="list-parent" id="list-parent-14"></div>
+            <p id="loading14">로딩 중...</p>
+            <div class="list-parent" id="list-parent-15"></div>
+            <p id="loading15">로딩 중...</p>
+            <div class="list-parent" id="list-parent-16"></div>
+            <p id="loading16">로딩 중...</p>
+            <div class="list-parent" id="list-parent-17"></div>
+            <p id="loading17">로딩 중...</p>
+        </div>
+        <div class="col-3-3">
+          <h4>직급별 통계</h4>
+          <ul id="data-list">
+            <li id="classlist">데이터 로딩 중...</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-4"></div>
     </div>
-    
-    <h2>지역별</h2>
-    <div id="chartContainer1"></div>
-    <h2>학교급별</h2>
-    <div id="chartContainer2"></div>
-    <h2>직급별</h2>
-    <ul id="sheetDataList"></ul>
-
-  
   </body>
 </html>

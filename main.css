@@ -1,9 +1,209 @@
-#toggle-button {
-    font-size: 1.5rem;
-    background-color: aquamarine;
+body {
+    font-family: 'NanumSquare', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FFFFFF;
+  }
+
+  .normal		{ font-weight: 400 }
+  .bold		    { font-weight: 700 }
+  .bolder		{ font-weight: 800 }
+  .light		{ font-weight: 300 }
+
+  /* 글자크기 일반 */
+
+h1 {
+    font-size: 3rem;
+    font-style: bolder;
+  }
+
+h2 {
+    font-size: 2.2rem;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+  }
+  
+  h4 {
+    font-size: 1.6rem;
+  }
+  
+  h5 {
+    font-size: 1.4rem;
+  }
+  
+  h6 {
+    font-size: 1.2rem;
+  }
+  
+  /* 767px 이하 */
+  @media screen and (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+      }
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    h3 {
+      font-size: 1.6rem;
+    }
+  
+    h4 {
+      font-size: 1.4rem;
+    }
+  
+    h5 {
+      font-size: 1.2rem;
+    }
+  
+    h6 {
+      font-size: 1rem;
+    }
+  }
+  
+  /* 479px 이하 */
+  @media screen and (max-width: 479px) {
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 900;
+      }
+    
+    h2 {
+      font-size: 1.6rem;
+    }
+  
+    h3 {
+      font-size: 1.4rem;
+    }
+  
+    h4 {
+      font-size: 1.2rem;
+    }
+  
+    h5 {
+      font-size: 1rem;
+    }
+  
+    h6 {
+      font-size: 0.8rem;
+    }
+  }
+
+li {
+    font-size: 1.3rem;
 }
+#classlist {
+    font-size: 1.6rem;
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    max-width: 1200px;
+    text-align: center;
+    height: 98%;
+    gap: 1rem;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .col-1 {
+    flex-basis: 30px;
+    border-radius: 10px;
+    margin-top: 3vh;
+  }
+
+  .col-2,
+  .col-3 {
+    gap: 1rem;
+    display: flex;
+  }
+
+  .col-3 {
+    border-radius: 10px;
+    margin-bottom: 3vh;
+  }
+
+.col-1,
+.col-2-1,
+.col-2-2,
+.col-3-1,
+.col-3-3 {
+  background-color: #F5F1E3;
+  color: #050505;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    
+  .col-2-1 {
+    flex: 6;
+  }
+
+  .col-2-2 {
+    background-color: #1B9AAA;
+    flex: 4;
+  }
+
+
+  .col-3-1 {
+    text-align: center;
+    flex: 6;
+  }
+
+  .col-3-3 {
+    text-align: center;
+    flex: 4;
+  }
+
+  .col-4 {
+    text-align: left;
+    flex: 1;
+  }
+
+.list-parent {
+  font-weight: 700  ;
+  font-size: 1.6rem;
+  background-color: #DDDBCB;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  max-width: 90vw;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
 
 #list-container {
     display: none;
+    background-color: rgba(128, 187, 255, 0.1);
   }
 
+#cell-data {
+    display: inline;
+    text-align: left;
+    color: #1B9AAA;
+}
+#data-list {
+  text-align: left;
+  font-weight: 700  ;
+  font-size: 1.6rem;
+}
+
+  /* 추가한 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+    .col-2,
+    .col-3 {
+      flex-direction: column;
+    }
+  
+  }
