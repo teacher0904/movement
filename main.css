@@ -4,8 +4,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #FFFFFF;
   }
 
@@ -17,34 +16,35 @@ body {
   /* 글자크기 일반 */
 
 h1 {
-    font-size: 2.0rem;
-    font-style: bolder;
+    font-size: 2.2rem;
+    font-weight: 900;
   }
 
 h2 {
-    font-size: 1.9rem;
-  }
-  
-  h3 {
     font-size: 1.8rem;
   }
   
-  h4 {
+  h3 {
     font-size: 1.6rem;
   }
   
-  h5 {
+  h4 {
     font-size: 1.4rem;
   }
   
-  h6 {
+  h5 {
     font-size: 1.2rem;
+  }
+  
+  h6 {
+    font-size: 1.0rem;
   }
   
   /* 767px 이하 */
   @media screen and (max-width: 767px) {
     h1 {
         font-size: 2rem;
+        font-weight: 900;
       }
     
     h2 {
@@ -71,34 +71,40 @@ h2 {
   /* 479px 이하 */
   @media screen and (max-width: 479px) {
     h1 {
-        font-size: 2.4rem;
+        font-size: 1.8rem;
         font-weight: 900;
       }
     
     h2 {
-      font-size: 1.6rem;
-    }
-  
-    h3 {
       font-size: 1.4rem;
     }
   
-    h4 {
+    h3 {
       font-size: 1.2rem;
     }
   
+    h4 {
+      font-size: 1.0rem;
+    }
+  
     h5 {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   
     h6 {
-      font-size: 0.8rem;
+      font-size: 0.6rem;
     }
   }
 
 li {
     font-size: 1.3rem;
 }
+
+.report-data-time-output {
+  display: inline;
+  font-size: 1rem;
+}
+
 #classlist {
     font-size: 1.6rem;
   }
@@ -170,16 +176,44 @@ li {
     flex: 1;
   }
 
-.list-parent {
+  .arrow {
+    transition: transform 0.3s;
+  }
+
+  .arrow.rotate {
+    transform: rotate(90deg);
+  }
+
+
+.list-content{
+  max-width: 90vw;
+  font-size: 0.8rem;
+  max-height: 0;
+  text-align: left;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  background-color: #e6e4d6;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* 추가된 부분 */
+}
+
+.list-title {
   font-weight: 700  ;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   background-color: #DDDBCB;
   border-radius: 8px;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
   padding: 1rem;
   max-width: 90vw;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
+}
+
+.list-parent {
+  margin-bottom: 1rem;
 }
 
 
@@ -195,8 +229,6 @@ li {
 }
 #data-list {
   text-align: left;
-  font-weight: 700  ;
-  font-size: 1.6rem;
 }
 
   /* 추가한 미디어 쿼리 */
