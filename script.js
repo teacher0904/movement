@@ -1,7 +1,7 @@
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(run);
 
-const sheetId = "1xS4f9iGMz6LK_-LKQ9MzvWwySL1595_BpEXTMTvCIp8"; // 구글 시트 ID
+const sheetId = "1kaiH5iOLt9Cg5ZeMp0IMhTSwvx-YnUXzrVVUWhwTerg"; // 구글 시트 ID
 const apiKey = "AIzaSyDbPZ-tyZLPpMpMYgrkwcv8Sm8cHozdD7s"; // 구글 API 키
 const sheetDataRanges = ["Sheet3!A2:B", "Sheet3!C2:D","Sheet3!E2:F", "Sheet3!G2:H","Sheet3!I2:J", "Sheet3!K2:L",
 "Sheet3!M2:N", "Sheet3!O2:P","Sheet3!Q2:R", "Sheet3!S2:T","Sheet3!U2:V", "Sheet3!W2:X",
