@@ -102,7 +102,8 @@ li {
 
 .report-data-time-output {
   display: inline;
-  font-size: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 #classlist {
