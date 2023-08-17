@@ -13,6 +13,12 @@ body {
   .bolder		{ font-weight: 800 }
   .light		{ font-weight: 300 }
 
+  .text01 {
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: red;
+  }
+
   /* 글자크기 일반 */
 
 h1 {
@@ -70,6 +76,7 @@ h2 {
   
   /* 479px 이하 */
   @media screen and (max-width: 479px) {
+    
     h1 {
         font-size: 1.8rem;
         font-weight: 900;
@@ -96,13 +103,22 @@ h2 {
     }
   }
 
-li {
+  @media screen and (max-width: 768px) {
+    .col-2,
+    .col-3 {
+      flex-direction: column;
+    }
+  
+  }
+
+
+.li {
     font-size: 1.3rem;
 }
 
 .total-output {
   display: inline;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
@@ -123,8 +139,8 @@ li {
     text-align: center;
     height: 98%;
     gap: 1rem;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
   }
 
   .col-1 {
@@ -175,22 +191,37 @@ li {
   .col-3-3 {
     text-align: center;
     flex: 4;
+    padding: 10vw;
   }
 
-  .col-4 {
+  .type-output {
     text-align: left;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+
+  .col-4 {
+    text-align: center;
     flex: 1;
+    color: #8d896e;
   }
 
   .arrow {
+    transform: rotate(0deg);
     transition: transform 0.3s;
   }
 
   .arrow.rotate {
+    display: inline-block;
     transform: rotate(90deg);
+    transition: transform 0.3s;
   }
 
-
+  .list-parent {
+    margin-bottom: 1rem;
+  }
+  
 .list-content{
   max-width: 90vw;
   font-size: 0.8rem;
@@ -218,30 +249,4 @@ li {
   text-align: left;
 }
 
-.list-parent {
-  margin-bottom: 1rem;
-}
 
-
-#list-container {
-    display: none;
-    background-color: rgba(128, 187, 255, 0.1);
-  }
-
-#cell-data {
-    display: inline;
-    text-align: left;
-    color: #1B9AAA;
-}
-#data-list {
-  text-align: left;
-}
-
-  /* 추가한 미디어 쿼리 */
-@media screen and (max-width: 768px) {
-    .col-2,
-    .col-3 {
-      flex-direction: column;
-    }
-  
-  }

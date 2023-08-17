@@ -49,7 +49,7 @@ function createLists() {
       const divEl = document.createElement('div');
       divEl.className = 'list-title';
       divEl.setAttribute('onclick', `toggleList(this)`);
-      divEl.innerHTML = `<span class="arrow">➤</span>${title}명`;
+      divEl.innerHTML = `<span class="arrow" onclick="toggleList(this)">➤</span> ${title}명`;
       listDiv.appendChild(divEl);
 
       const ulEl = document.createElement('ul');
@@ -61,6 +61,8 @@ function createLists() {
       listsContainer.appendChild(listDiv);
   }
 }
+
+
 
 function displayTotalData() {
   const totalOutput = document.querySelector('.total-output');
