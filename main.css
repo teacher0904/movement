@@ -100,10 +100,15 @@ li {
     font-size: 1.3rem;
 }
 
+.total-output {
+  display: inline;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
 .report-data-time-output {
   display: inline;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.0rem;
 }
 
 #classlist {
