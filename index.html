@@ -9,34 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
  
-    <body onload="fetchData()">
-
-  <div id="popup" class="popup-wrapper">
-    <div class="popup-container">
-      <button id="close-btn" class="close-btn material-icons">close</button>
-      <p id="popuptitle1">📊학교별 데이터 관련 안내</p>
-      <p>안녕하세요! <br>
-        이제는 요청하신 부분뿐만 아니라 원본 데이터의 학교명이 
-        학구도서비스에 나오는 공식명칭이 아닌경우 오류값으로 표시되게 하여, 
-        순차적으로 모든 오류값을 검토 중입니다. <br><br>
-        (검토할 때에도 일괄수정이 아닌 건바이건으로 공식명칭을 확인하며 소중한 서명 데이터 하나하나가 지켜질 수 있도록 만전을 기하는 중입니다.)<img src="https://t1.daumcdn.net/cfile/tistory/9933BE3B5DD3E0C825" class="textimg"></img><br><br>
-        이에 따라 서울OO초(5건)+OO초(4건)로 검색되던 것이 어느 시점에는
-        서울OO초(7건)+OO초(2건)과 같이 <b><u>일시적으로 숫자가 감소</u></b>되는 것처럼 보일수 있음을 양해바랍니다.<br><br>
-        
-        검증할 데이터양이 6000건 가량 밀려있어 수정될 때까지 시간이 조금 걸릴 수 있습니다. (8.21.일요일까지 완료가능할 것으로 예상)<br><br>
-        <br>
-        <b>🏫[학교명 입력관련 추가 중요사항 안내]</b><br><br>
-        경기도의 <b>‘초당초’</b>나 <b>'원일초'</b>, 강원도의 <b>‘중앙초’</b>와 같이 같은 시도 내에 동일교명이 2~3건이 존재하여 공식명칭만으로는 식별이 불가한 경우도 있습니다.<br>
-        이런 경우에 한해서 예외적으로 ‘안산초당초’ ‘용인초당초’라고 적어주세요. <br><br>
-        ✅기존에 경기지역이면서 <u><b>‘초당초’</b>를 기입하신 분들</u>은 본인 ‘성함’+‘입력한 날짜 또는 기타정보’등을 알려주시면 본인확인을 거쳐 기존자료를 수정해드리겠습니다.<br>
-        '안산초당초' 또는 '용인초당초'라고 미리 적어주신 선생님들은 따로 연락주지 않으셔도 됩니다.</p>
-      <div id="dont-show-btn" class="dont-show-btn">다시 띄우지 않기🆗</div>
-    </div>
-  </div>
-
-
-    <div class="container">
-
+<body onload="fetchData()">
+<div class="container">
       <div class="col-1">
         <h1>9.4. 공교육 멈춤의 날</h1>
           <div class="total-output"></div>
@@ -66,6 +40,29 @@
 
     </div>
 
+    <div id="popup" class="popup-wrapper">
+      <div class="popup-container">
+        <button id="close-btn" class="close-btn material-icons">close</button>
+        <p id="popuptitle1">📊학교별 데이터 관련 안내</p>
+        <p>안녕하세요! <br>
+          이제는 요청하신 부분뿐만 아니라 원본 데이터의 학교명이 
+          학구도서비스에 나오는 공식명칭이 아닌경우 오류값으로 표시되게 하여, 
+          순차적으로 모든 오류값을 검토 중입니다. <br><br>
+          (검토할 때에도 일괄수정이 아닌 건바이건으로 공식명칭을 확인하며 소중한 서명 데이터 하나하나가 지켜질 수 있도록 만전을 기하는 중입니다.)<img src="https://t1.daumcdn.net/cfile/tistory/9933BE3B5DD3E0C825" class="textimg"></img><br><br>
+          이에 따라 서울OO초(5건)+OO초(4건)로 검색되던 것이 어느 시점에는
+          서울OO초(7건)+OO초(2건)과 같이 <b><u>일시적으로 숫자가 감소</u></b>되는 것처럼 보일수 있음을 양해바랍니다.<br><br>
+          
+          검증할 데이터양이 6000건 가량 밀려있어 수정될 때까지 시간이 조금 걸릴 수 있습니다. (8.21.일요일까지 완료가능할 것으로 예상)<br><br>
+          <br>
+          <b>🏫[학교명 입력관련 추가 중요사항 안내]</b><br><br>
+          경기도의 <b>‘초당초’</b>나 <b>'원일초'</b>, 강원도의 <b>‘중앙초’</b>와 같이 같은 시도 내에 동일교명이 2~3건이 존재하여 공식명칭만으로는 식별이 불가한 경우도 있습니다.<br>
+          이런 경우에 한해서 예외적으로 ‘안산초당초’ ‘용인초당초’라고 적어주세요. <br><br>
+          ✅기존에 경기지역이면서 <u><b>‘초당초’</b>를 기입하신 분들</u>은 본인 ‘성함’+‘입력한 날짜 또는 기타정보’등을 알려주시면 본인확인을 거쳐 기존자료를 수정해드리겠습니다.<br>
+          '안산초당초' 또는 '용인초당초'라고 미리 적어주신 선생님들은 따로 연락주지 않으셔도 됩니다.</p>
+        <div id="dont-show-btn" class="dont-show-btn">다시 띄우지 않기🆗</div>
+      </div>
+    </div>
+  
     <script type="text/javascript" src="popupscript.js"></script>
 
   </body>
