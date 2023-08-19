@@ -96,3 +96,16 @@ function displayDataTime(dataTime) {
   p.innerText = dataTime;
   dataTimeOutput.appendChild(p);
 }
+
+function randomLink() {
+  var links = [
+    'https://open.kakao.com/o/sOZkLQBf',
+    'https://open.kakao.com/o/sRSdZ8Bf',
+    'https://open.kakao.com/o/sKXWU8Bf'
+  ];
+
+  var randomIndex = Math.floor(Math.random() * links.length);
+  var selectedLink = links[randomIndex];
+
+  window.location.href = selectedLink;
+}

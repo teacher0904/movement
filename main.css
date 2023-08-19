@@ -125,6 +125,8 @@ h2 {
 .report-data-time-output {
   display: inline;
   font-size: 1.0rem;
+  font-weight: 700;
+  color: #1B9AAA;
 }
 
 #classlist {
@@ -180,7 +182,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-height: 6vh;
+    max-height: 8vh;
   }
 
   .col-2-2 {
@@ -190,7 +192,7 @@ h2 {
     justify-content: center;
     padding: 0;
     flex: 8;
-    max-height: 6vh;
+    max-height: 8vh;
   }
 
 
