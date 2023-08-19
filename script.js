@@ -1,3 +1,6 @@
+
+
+
 let data = [];
 let totalData = [];
 let typeData = [];
@@ -107,3 +110,6 @@ function randomLink() {
 
   window.open(selectedLink); // 새 창으로 링크를 엽니다.
 }
+
+
+
