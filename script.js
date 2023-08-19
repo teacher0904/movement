@@ -99,9 +99,7 @@ function displayDataTime(dataTime) {
 
 function randomLink() {
   var links = [
-    'https://open.kakao.com/o/sOZkLQBf',
-    'https://open.kakao.com/o/sRSdZ8Bf',
-    'https://open.kakao.com/o/sKXWU8Bf'
+    'https://open.kakao.com/o/sRSdZ8Bf'//YJ
   ];
 
   var randomIndex = Math.floor(Math.random() * links.length);
