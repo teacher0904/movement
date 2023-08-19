@@ -276,9 +276,9 @@ h2 {
 
 .popup-container {
   position: relative;
-  left: 5%;
-  top: 5%;
-  width: 70vw;
+  left: 3%;
+  top: 3%;
+  width: 80vw;
   max-width: 500px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 30px;
