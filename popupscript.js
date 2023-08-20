@@ -1,4 +1,3 @@
-
 const closeBtn = document.getElementById("close-btn");
 const dontShowBtn = document.getElementById("dont-show-btn");
 
