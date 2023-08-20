@@ -4,11 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="search.js" defer></script>
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">  </head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
- 
+
 <body onload="fetchData()">
 <div class="container">
       <div class="col-1">
@@ -29,7 +30,12 @@
       <div class="col-3">
         <div class="col-3-1">
           <h2>지역별 통계</h2>
-          <h6>학교이름을 찾을때는 검색으로 찾아주세요.</h6>
+          <div class="search">
+            <span style="font-size: 1.2rem; font-weight: 900;">🏫 학교 찾아보기</span>
+          <div class="search-in"><input id="search-box" type="text" placeholder="학교 이름" />
+          <button id="search-btn">찾기</button></div>
+          <ul id="search-results"></ul>
+          </div>
         </div>
 
         <div class="col-3-3">
@@ -64,6 +70,8 @@
       <div id="dont-show-btn" class="dont-show-btn">다시 띄우지 않기🆗</div>
     </div>
   </div>
+
+
   <script type="text/javascript" src="popupscript.js"></script>
 
   </body>

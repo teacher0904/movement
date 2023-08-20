@@ -6,9 +6,10 @@ body {
     justify-content: center;
     min-height: 100vh;
     background-color: #FFFFFF;
+    font-weight: 700;
   }
 
-  .normal		{ font-weight: 400 }
+  .normal		{ font-weight: 700 }
   .bold		    { font-weight: 700 }
   .bolder		{ font-weight: 800 }
   .light		{ font-weight: 300 }
@@ -34,6 +35,7 @@ h1 {
 
 h2 {
     font-size: 1.8rem;
+    font-weight: 900;
   }
   
   h3 {
@@ -61,6 +63,7 @@ h2 {
     
     h2 {
       font-size: 1.8rem;
+      font-weight: 900;
     }
   
     h3 {
@@ -90,6 +93,7 @@ h2 {
     
     h2 {
       font-size: 1.4rem;
+      font-weight: 900;
     }
   
     h3 {
@@ -333,3 +337,67 @@ h2 {
 }
 
 
+#search-results {
+  padding: 0;
+  list-style-type: none;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700  ;
+  font-size: 1.0rem;
+  background-color: #eeede5;;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-in {
+  margin-top:10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-results {
+  padding: 0px;
+  display: none;
+  font-size: 1.0rem;
+}
+
+#search-box {
+  margin-right: 10px;
+  width: 50%;
+  border-color: transparent; 
+  font-weight: 700;
+  background-color: transparent;
+  border-bottom: 1px solid-black;
+  outline: none;
+  text-align: center;
+  border-color: rgb(0, 0, 0); /* 포커스되면 밑줄 색을 검정색으로 유지 */
+  border-top: none; /* 상단, 좌측, 우측 테두리를 제거 */
+  border-left: none;
+  border-right: none;
+  box-shadow: none; /* 외곽선이 남아있는 경우엔 box-shadow를 제거 */
+}
+
+#search-box:focus {
+  border-color: rgb(0, 0, 0); /* 포커스되면 밑줄 색을 검정색으로 유지 */
+  border-top: none; /* 상단, 좌측, 우측 테두리를 제거 */
+  border-left: none;
+  border-right: none;
+  box-shadow: none; /* 외곽선이 남아있는 경우엔 box-shadow를 제거 */
+}
+
+
+#search-btn {
+  border-radius: 3px;
+  border-color: transparent;
+  margin-bottom: 5px;
+  background-color: whitesmoke;
+  font-weight: 900;
+}

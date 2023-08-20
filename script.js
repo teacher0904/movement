@@ -1,3 +1,6 @@
+
+
+
 let data = [];
 let totalData = [];
 let typeData = [];
