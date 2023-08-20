@@ -126,17 +126,22 @@ h2 {
     font-size: 1.3rem;
 }
 
+.total-output-title,
 .total-output {
   display: inline;
+  margin: 0;
+  line-height: 1;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 900;
 }
-
+.report-data-time-notice,
 .report-data-time-output {
   display: inline;
   font-size: 1.0rem;
   font-weight: 700;
   color: #1B9AAA;
+  line-height: 1;
+  margin: 0;
 }
 
 #classlist {
