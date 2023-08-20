@@ -21,6 +21,12 @@ body {
 
   /* 글자크기 일반 */
 
+  .no-spacing {
+    margin: 0;
+    line-height: 1;
+  }
+
+  
 h1 {
     font-size: 2.2rem;
     font-weight: 900;
@@ -187,6 +193,7 @@ h2 {
 
   .col-2-2 {
     background-color: #1B9AAA;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,6 +201,7 @@ h2 {
     flex: 8;
     max-height: 8vh;
   }
+
 
 
   .col-3-1 {
