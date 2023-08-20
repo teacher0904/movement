@@ -3,6 +3,7 @@
     const storageKey = "hidePopup";
     const hidePopupExpiration = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
+    
     function setLocalStorageWithExpiration(name, value, time) {
       const storageObject = {
         value: value,
