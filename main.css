@@ -368,6 +368,7 @@ h2 {
   display: none;
   font-size: 1.0rem;
   margin: 3px;
+  text-align: left;
 }
 
 #search-box {
@@ -397,10 +398,12 @@ h2 {
 }
 
 #search-btn {
-  border-radius: 3px;
-  border-color: rgb(212, 212, 212);
-  margin-bottom: 5px;
-  background-color: whitesmoke;
+  font-family: 'NanumSquare', sans-serif;
+  box-shadow: none;
+  border-width: 0px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: rgb(209, 209, 209);
   color: black;
   font-weight: 900;
 }
