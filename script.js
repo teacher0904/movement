@@ -115,3 +115,22 @@ function randomLink() {
 function goToLink() {
   window.open('https://forms.gle/gS3E1mCA7xcqkxhY6', '_blank');
 }
+
+
+
+async function fetchSchoolData() {
+  const url = 'https://script.google.com/macros/s/AKfycbyLlP51VyfU1wpUpsStqu2dArXFG5P8gqM0WgHdEtty2cJSycCjGaZtXwP6TIFHoCJA/exec'; // 여기에 실제 배포 URL 입력
+
+  try {
+    const response = await fetch(url);
+    const cellValue = await response.text();
+    // 원하는 HTML 요소에 셀 값 추가
+    const cellValueOutput = document.querySelector('.school-data-output');
+    cellValueOutput.innerText = cellValue;
+  } catch (error) {
+    console.error('Fetch 요청 실패:', error);
+  }
+}
+
+// 이 함수를 HTML 페이지 로드 시 호출하거나, 버튼 클릭, 이벤트 리스너 등을 사용하여 원하는 시점에 호출할 수 있습니다.
+window.addEventListener('DOMContentLoaded', fetchSchoolData);
