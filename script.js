@@ -112,4 +112,6 @@ function randomLink() {
 }
 
 
-
+function goToLink() {
+  window.open('https://forms.gle/gS3E1mCA7xcqkxhY6', '_blank');
+}
