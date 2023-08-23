@@ -111,7 +111,7 @@ function randomLink() {
   var randomIndex = Math.floor(Math.random() * links.length);
   var selectedLink = links[randomIndex];
 
-  window.open(selectedLink); // 새 창으로 링크를 엽니다.
+  window.location.href = selectedLink; // Navigate to the selected link in the current window
 }
 
 
