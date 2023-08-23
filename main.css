@@ -54,6 +54,12 @@ h2 {
     font-size: 1.0rem;
   }
   
+
+  #caution {
+    font-size: 2.0rem;
+    font-weight: 900;
+  }
+
   /* 767px 이하 */
   @media screen and (max-width: 767px) {
     h1 {
@@ -86,6 +92,10 @@ h2 {
   /* 479px 이하 */
   @media screen and (max-width: 479px) {
 
+  #caution {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
 
     .col-3 {
       display: flex;
