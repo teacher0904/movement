@@ -7,7 +7,6 @@ body {
     min-height: 100vh;
     background-color: #FFFFFF;
     font-weight: 700;
-    overflow: hidden;
   }
 
   .normal		{ font-weight: 700 }
@@ -215,7 +214,6 @@ h2 {
     gap: 1rem;
     margin-top: 1vw;
     margin-bottom: 1vw;
-    filter: blur(10px);
   }
 
   .col-1 {
@@ -367,8 +365,8 @@ h2 {
 
 .popup-container {
   position: fixed;  /* fixed positioning */
-  top: 50%;        /* centers vertically */
-  left: 50%;       /* centers horizontally */
+  top: 10%;        /* centers vertically */
+  left: 10%;       /* centers horizontally */
   width: 80vw;
   max-width: 500px;
   background-color: rgba(0, 0, 0, 0.9);
