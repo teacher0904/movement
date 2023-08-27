@@ -386,6 +386,12 @@ h2 {
   letter-spacing: -0.05em;
 }
 
+#notice_white2{
+  font-size:0.8rem;
+  color:rgb(255, 255, 255);
+  letter-spacing: -0.05em;
+}
+
 #notice_red{
   font-size:1.4rem;
   color:rgb(255, 0, 0);
