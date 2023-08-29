@@ -214,6 +214,7 @@ h2 {
     gap: 1rem;
     margin-top: 1vw;
     margin-bottom: 1vw;
+    filter: blur(10px)
   }
 
   .col-1 {
@@ -365,8 +366,8 @@ h2 {
 
 .popup-container {
   position: fixed;  /* fixed positioning */
-  top: 10%;        /* centers vertically */
-  left: 10%;       /* centers horizontally */
+  top: 50%;        /* centers vertically */
+  left: 50%;       /* centers horizontally */
   width: 80vw;
   max-width: 500px;
   background-color: rgba(0, 0, 0, 0.9);
@@ -382,6 +383,8 @@ h2 {
   font-size:1.1rem;
   color:rgb(255, 255, 255);
   letter-spacing: -0.05em;
+  word-break: keep-all;
+  text-align: center;
 }
 
 #notice_white2{
@@ -391,7 +394,9 @@ h2 {
 }
 
 #notice_red{
-  font-size:1.4rem;
+  font-size:2.0rem;
+  font-weight: 900;
+  text-align: center;
   color:rgb(255, 0, 0);
   letter-spacing: -0.05em;
 }
@@ -403,6 +408,13 @@ h2 {
 #notice_mint:active {
   font-size:1.2rem;
   color:rgb(0, 255, 225);
+  letter-spacing: -0.05em;
+}
+
+#notice_yellow {
+  font-size:1.5rem;
+  color:rgb(255, 242, 0);
+  font-weight: 900;
   letter-spacing: -0.05em;
 }
 #popuptitle1 {
@@ -422,6 +434,7 @@ h2 {
   border: none;
   font-size: 24px;
   cursor: pointer;
+  color: white;
 }
 
 .dont-show-btn {
