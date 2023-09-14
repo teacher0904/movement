@@ -59,6 +59,9 @@ fetch(url)
     span2.textContent = Number(totalData.통계).toLocaleString() + '명'; 
   }
 });
+function redirectToLink() {
+  window.location.href = "https://docs.google.com/spreadsheets/d/1fF-nE0gjY1qbht2DziogYX1LXXaJOll1feilpmcKhsg/edit#gid=1799442941";
+}
 
 
 
@@ -83,7 +86,8 @@ fetch(url)
 		
 		.tablinks {
       border-radius: 10px 10px 0 0 ;
-            background-color:#818181;  
+      background-color:rgb(247, 246, 238); 
+
 			flex-grow: 1;
 			text-align: center;
 			padding: 15px;
@@ -93,7 +97,6 @@ fetch(url)
         
         .tablinks:hover {
           
-            background-color:#818181;  
             border-radius: 10px 10px 0 0 ;
 
         }
@@ -154,7 +157,7 @@ fetch(url)
     <h1><span style="color:yellow">9.4. 공교육 멈춤의 날 참여 집계</span></h1>
 <h3>2023년 9월 4일 출근하지 않은 초등교원의 수 </h3>
     <div id="data-total"><h1> <span id="data2" style="color:red"></span></h1></div>
-    <div class="notice_main"> 상세 집계 확인/추가하기 </div>
+    <div class="notice_main" onclick="redirectToLink()"> 상세 집계 확인/추가하기 </div>
     <div><span style="color:green;"><br><B>*학교별 집계는 제공하지 않습니다.</B></span></div>
     <p></p>
     <div id="data" class="grid"></div>
