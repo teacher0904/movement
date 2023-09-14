@@ -45,7 +45,8 @@ fetch(url)
     if (data[i].지역 === "전국 총합") continue;
     
     var p = document.createElement('p');
-    p.textContent = data[i].지역 + ' - ' + data[i].통계 + '명';
+    // Use innerHTML and <br> to add a line break
+    p.innerHTML = '[' + data[i].지역 + ']<br>' + Number(data[i].통계).toLocaleString() + '명';
     div.appendChild(p);
   }
 
@@ -54,9 +55,11 @@ fetch(url)
   
   if (totalData) {
     var span2 = document.getElementById('data2'); // get the span element
-    span2.textContent = totalData.통계 + '명'; // set the text content of the span element
+    // Use toLocaleString to add commas
+    span2.textContent = Number(totalData.통계).toLocaleString() + '명'; 
   }
 });
+
 
 
     </script>
@@ -111,6 +114,31 @@ fetch(url)
   gap: 10px; /* This adds some space between the items */
 }
 
+#Tab1,
+#Page1{
+  background-color: black;
+  color: white;
+}
+
+#Page1{
+  border-radius: 0px 0px 10px 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  justify-items: center;
+}
+
+.notice_main{
+  width: 50%;
+  height: auto; /* Adjusts height based on content */
+  margin: auto; /* Centers the div */
+  
+  background-color:grey;
+  color:black;
+
+   /* Styling properties */
+   font-size:1.8rem;
+   border-radius:5px;
+}
 
       </style>
 
@@ -118,16 +146,16 @@ fetch(url)
 <body onload="fetchData(); changeTab({currentTarget: document.getElementById('Tab1')}, 'Page1');">
   <div class="container">
 <div class="tab-container">
-  <div id = 'Tab1' class = 'tablinks active' onclick = "changeTab(event, 'Page1')">9.4. 공교육 멈춤의 날 참여 통계</div>
-  <div id = 'Tab2' class = 'tablinks' onclick = "changeTab(event, 'Page2')">9.4. 공교육 멈춤의 날 집계</div>
+  <div id = 'Tab1' class = 'tablinks active' onclick = "changeTab(event, 'Page1')">9.4. 공교육 멈춤의 날 참여 집계</div>
+  <div id = 'Tab2' class = 'tablinks' onclick = "changeTab(event, 'Page2')">9.4. 공교육 멈춤의 날 참여의사 사전 집계</div>
 </div>
   <!-- Tab content -->
   <div id ='Page1' class ='tabcontent active'> 
-    <h1>9.4. 공교육 멈춤의 날 참여 통계</h1>
-<h2>참여 초등교원집계 </h2>
-    <div id="data-total"><h2> <span id="data2"></span></h2></div>
-    <div class="col-2-3"> 공지사항 </div>
-    <div><span class="notice_mint"><br><B>*학교별 집계는 제공하지 않습니다.</B></span></div>
+    <h1><span style="color:yellow">9.4. 공교육 멈춤의 날 참여 통계</span></h1>
+<h3>2023년9월4일 출근하지 않은 초등교원의 수 </h3>
+    <div id="data-total"><h1> <span id="data2" style="color:red"></span></h1></div>
+    <div class="notice_main"> 상세 집계 확인/추가하기 </div>
+    <div><span style="color:red;"><br><B>*학교별 집계는 제공하지 않습니다.</B></span></div>
     <p></p>
     <div id="data" class="grid"></div>
 
