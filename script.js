@@ -132,3 +132,6 @@ async function fetchSchoolData() {
 
 // 이 함수를 HTML 페이지 로드 시 호출하거나, 버튼 클릭, 이벤트 리스너 등을 사용하여 원하는 시점에 호출할 수 있습니다.
 window.addEventListener('DOMContentLoaded', fetchSchoolData);
+
+
+

@@ -10,9 +10,134 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <Title>9.4. 공교육 정상화의 날 동참 서명 집계</Title>
 
+    <script type='text/javascript'>
+function changeTab(evt, pageName) {
 
-<body onload="fetchData()">
-<div class="container">
+var i, tabcontent, tablinks;
+
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i< tabcontent.length ; i++) {
+   tabcontent[i].style.display ="none";
+}
+
+tablinks=document.getElementsByClassName("tablinks");
+for (i=0;i< tablinks.length ; i++) {
+   tablinks[i].className=tablinks[i].className.replace("active","");
+   }
+
+document.getElementById(pageName).style.display ="block";
+
+if(evt.currentTarget)
+    evt.currentTarget.className += " active";
+else
+    document.getElementById('Tab1').className += " active";
+}
+
+// Replace this URL with the URL of your web app
+var url = "https://script.google.com/macros/s/AKfycbyEWeteYnVkEsDKRi6ewCQpAi5du5sFGXbzb1jzziKQMfjZE3kCT7fGo9TSPlEFSts/exec";
+
+fetch(url)
+.then(response => response.json())
+.then(data => {
+  var div = document.getElementById('data');
+  
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].지역 === "전국 총합") continue;
+    
+    var p = document.createElement('p');
+    p.textContent = data[i].지역 + ' - ' + data[i].통계 + '명';
+    div.appendChild(p);
+  }
+
+  // Display total separately
+  var totalData = data.find(item => item.지역 === "전국 총합");
+  
+  if (totalData) {
+    var span2 = document.getElementById('data2'); // get the span element
+    span2.textContent = totalData.통계 + '명'; // set the text content of the span element
+  }
+});
+
+
+    </script>
+      
+
+      <style>
+		.tab-container {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+      padding: 0;
+		}
+		
+		.tabcontent {
+			display: none;
+			width: 100%;
+      background-color:rgb(247, 246, 238); 
+      padding: 0;
+      
+		}
+		
+		.tablinks {
+      border-radius: 10px 10px 0 0 ;
+            background-color:#818181;  
+			flex-grow: 1;
+			text-align: center;
+			padding: 15px;
+			cursor: pointer;
+            transition-duration:0.3s;
+        }
+        
+        .tablinks:hover {
+          
+            background-color:#818181;  
+            border-radius: 10px 10px 0 0 ;
+
+        }
+		
+        .tabcontent.active,
+        .tablinks.active {
+          border-width: 1px;
+            background-color:rgb(247, 246, 238); 
+            border-radius: 10px 10px 0 0 ;
+            box-shadow: 0px 5px 10px rgba(0,0,0,0);
+
+
+        }
+        
+        .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* This creates a grid with three equal columns */
+  gap: 10px; /* This adds some space between the items */
+}
+
+
+      </style>
+
+      
+<body onload="fetchData(); changeTab({currentTarget: document.getElementById('Tab1')}, 'Page1');">
+  <div class="container">
+<div class="tab-container">
+  <div id = 'Tab1' class = 'tablinks active' onclick = "changeTab(event, 'Page1')">9.4. 공교육 멈춤의 날 참여 통계</div>
+  <div id = 'Tab2' class = 'tablinks' onclick = "changeTab(event, 'Page2')">9.4. 공교육 멈춤의 날 집계</div>
+</div>
+  <!-- Tab content -->
+  <div id ='Page1' class ='tabcontent active'> 
+    <h1>9.4. 공교육 멈춤의 날 참여 통계</h1>
+<h2>참여 초등교원집계 </h2>
+    <div id="data-total"><h2> <span id="data2"></span></h2></div>
+    <div class="col-2-3"> 공지사항 </div>
+    <div><span class="notice_mint"><br><B>*학교별 집계는 제공하지 않습니다.</B></span></div>
+    <p></p>
+    <div id="data" class="grid"></div>
+
+    <!-- 첫 번째 탭의 내용을 여기에 넣으세요 --> 
+  
+  </div> 
+  
+  <div id ='Page2'class ='tabcontent'> <!-- 두 번째 탭의 내용을 여기에 넣으세요 --> 
+    
+
       <div class="col-1">
         <h1>9.4. 공교육 정상화의 날</h1>
         <span class="total-output-title">-공교육이 회복할 수 있도록 9월4일은 멈추는 날-</span><br><br><br>
@@ -53,11 +178,10 @@
         </div>
 
       </div>
-      <div class="col-4"><span style="font-size: 0.8rem;">[다했니]기획 교사 최지원<br>
-        👻수학귀신<br>
-        👻수학귀싱</h6></div>
+      <div class="col-4"></div>
 
     </div>
+  </div>
 
  
 <!--      <div id="popup" class="popup-wrapper">
